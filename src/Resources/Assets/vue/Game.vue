@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="total-points"><h2>PTS: {{ totalPointsLeadZero }}</h2></div>
+        <div v-show="showPoints" class="total-points"><h2>PTS: {{ totalPointsLeadZero }}</h2></div>
 
         <div>
             <component
@@ -22,6 +22,7 @@
     import Answer from './Answer';
     import Wrong from './Wrong';
     import Pass from './Pass';
+    import Finish from './Finish';
 
     export default {
         name: "Game",
@@ -31,7 +32,8 @@
                 totalPoints: 0,
                 currentQuestion: 0,
                 gameX: 'game-start',
-                gameXProps: {}
+                gameXProps: {},
+                showPoints: true
             }
         },
         components:{
@@ -39,7 +41,8 @@
             'game-question': Question,
             'game-answer': Answer,
             'game-wrong': Wrong,
-            'game-pass': Pass
+            'game-pass': Pass,
+            'game-finish': Finish
         },
         methods:{
 
@@ -47,15 +50,18 @@
                 console.log(this.questions.length);
                 console.log(this.currentQuestion);
                 this.currentQuestion++;
-                if(this.questions.length == 0){
+                if(this.questions.length === 0){
+                    console.log('1111');
                     this.endGame();
                 }else{
                     if(this.currentQuestion > this.questions.length){
                         this.currentQuestion = 0
                     }
+
+                    this.gameX = 'game-question';
+                    this.gameXProps = this.questions[this.currentQuestion];
                 }
-                this.gameX = 'game-question';
-                this.gameXProps = this.questions[this.currentQuestion];
+
             },
             getQuestions() {
                 axios.get('/game/celeb/get-questions').then(response => {
@@ -107,7 +113,10 @@
                 }.bind(this), 10000);
             },
             endGame() {
-                alert('end');
+                console.log('2222');
+                this.showPoints = false;
+                this.gameX = 'game-finish';
+                this.gameXProps = {score: this.totalPoints}
             },
             removeQuestion(){
                 this.questions.splice(this.currentQuestion,1);

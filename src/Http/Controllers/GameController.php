@@ -9,7 +9,7 @@ class GameController extends Controller
 {
     public function getQuestions()
     {
-        $questions = Question::where('answered', 0)->inRandomOrder()->get();
+        $questions = Question::where('answered', 1)->inRandomOrder()->get();
 
         return response()->json($questions->toArray());
     }
