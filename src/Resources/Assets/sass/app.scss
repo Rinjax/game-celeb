@@ -1,0 +1,28 @@
+
+//Bootstrap
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+
+// Variables
+@import "variables";
+
+
+html, body{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body{
+  color: #fff;
+  margin: 0;
+  background-color: #333333;
+
+}
+

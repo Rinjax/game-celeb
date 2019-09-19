@@ -1,0 +1,6 @@
+/vendor/
+/node_modules/
+.env
+/dump
+/.idea/
+.idea/workspace.xml

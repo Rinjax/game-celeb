@@ -1,0 +1,24 @@
+{
+    "name": "rinjax/game-celeb",
+    "authors": [
+        {
+            "name": "steve.temple",
+            "email": "steve@encara.co.uk"
+        }
+    ],
+    "version": "0.0.2",
+    "require": {},
+
+    "autoload": {
+        "psr-4": {
+            "Rinjax\\GameCeleb\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rinjax\\GameCeleb\\Providers\\GameCelebServiceProvider"
+            ]
+        }
+    }
+}
