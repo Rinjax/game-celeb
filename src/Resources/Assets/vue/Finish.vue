@@ -5,9 +5,6 @@
             <h3 class="text-center">
                 thats it folks, no more questions
             </h3>
-            <h2 class="text-center">
-                Your score was {{score}} points
-            </h2>
         </div>
     </div>
 </template>

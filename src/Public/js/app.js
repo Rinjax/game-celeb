@@ -1881,9 +1881,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Finish",
   props: ['score']
@@ -33945,25 +33942,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("h1", { staticClass: "text-center text-danger" }, [_vm._v("Finished!")]),
-    _vm._v(" "),
-    _c("div", [
-      _c("h3", { staticClass: "text-center" }, [
-        _vm._v("\n            thats it folks, no more questions\n        ")
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("h1", { staticClass: "text-center text-danger" }, [
+        _vm._v("Finished!")
       ]),
       _vm._v(" "),
-      _c("h2", { staticClass: "text-center" }, [
-        _vm._v(
-          "\n            Your score was " +
-            _vm._s(_vm.score) +
-            " points\n        "
-        )
+      _c("div", [
+        _c("h3", { staticClass: "text-center" }, [
+          _vm._v("\n            thats it folks, no more questions\n        ")
+        ])
       ])
     ])
-  ])
-}
-var staticRenderFns = []
+  }
+]
 render._withStripped = true
 
 
